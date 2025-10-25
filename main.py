@@ -7,7 +7,7 @@ print(f"random patterns: {randm_patterns.shape}")
 perturbed_pattern = f.perturb_pattern(randm_patterns[0,],200)
 print(f"shape of perturbed pattern: {perturbed_pattern.shape}")
 # Run the synchronous update rule until convergence, or up to 20 iterations. Did the network retrieve the original pattern?
-weights = f.storkey_weights(randm_patterns) # before that we build the hebbian matrix
+weights = f.storkey_weights_vectorized(randm_patterns) # before that we build the hebbian matrix
 print(f"weights: {weights.shape}")
 output_syn = f.dynamics(perturbed_pattern, weights, 20)
 print(f"output syncronous: {len(output_syn)}")
